@@ -1,0 +1,35 @@
+{
+  "name": "tempest-lottery",
+  "version": "2.0.0",
+  "description": "Tempest Lottery - FHE-Encrypted Lottery Game using Zama fhEVM 0.9.1 - Players submit encrypted lucky numbers and win based on proximity to the winning number",
+  "scripts": {
+    "compile": "hardhat compile",
+    "clean": "hardhat clean",
+    "deploy": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "test": "hardhat test"
+  },
+  "keywords": [
+    "fhe",
+    "fhevm",
+    "zama",
+    "encrypted",
+    "lottery",
+    "blockchain",
+    "privacy"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@fhevm/hardhat-plugin": "^0.3.0-1",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.0"
+  },
+  "dependencies": {
+    "@fhevm/solidity": "^0.9.1",
+    "@zama-fhe/relayer-sdk": "^0.3.0-5",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.4"
+  }
+}
