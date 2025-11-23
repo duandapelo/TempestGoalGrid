@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin" />
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp" />
+    <link rel="preconnect" href="https://cdn.zama.org" />
+    <title>Tempest Lottery</title>
+    <meta
+      name="description"
+      content="Tempest Lottery is an fhEVM-powered encrypted lottery on Sepolia."
+    />
+    <meta property="og:title" content="Tempest Lottery" />
+    <meta
+      property="og:description"
+      content="Pick your lucky number, encrypted with FHE, and win prizes on-chain."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script
+      src="https://cdn.zama.org/relayer-sdk-js/0.3.0-5/relayer-sdk-js.umd.cjs"
+      defer
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
