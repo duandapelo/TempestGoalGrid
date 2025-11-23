@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling for anchor navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 47 95% 55%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 47 95% 55%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom lottery styles */
+@layer components {
+  .lottery-card {
+    @apply relative overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-br from-secondary/50 to-background p-6 backdrop-blur-sm;
+  }
+
+  .lottery-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 opacity-50;
+  }
+
+  .ticket-ball {
+    @apply flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-lottery-gold to-lottery-jackpot text-2xl font-bold text-black shadow-lg shadow-lottery-gold/30;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3), 0 0 30px rgba(255, 215, 0, 0.2);
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  .jackpot-border {
+    @apply relative;
+  }
+
+  .jackpot-border::before {
+    content: '';
+    @apply absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-lottery-gold via-lottery-jackpot to-lottery-gold opacity-75;
+    animation: shimmer 3s linear infinite;
+    background-size: 200% 100%;
+    z-index: -1;
+  }
+}
+
+/* Number rolling animation */
+.number-roller {
+  display: inline-block;
+  overflow: hidden;
+  height: 1.2em;
+}
+
+.number-roller span {
+  display: block;
+  animation: number-roll 0.5s ease-out forwards;
+}
+
+/* Confetti canvas */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Particle background */
+.particles-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.8), transparent);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Prize tier badges */
+.tier-1 {
+  @apply bg-gradient-to-r from-lottery-gold to-yellow-500 text-black;
+}
+
+.tier-2 {
+  @apply bg-gradient-to-r from-lottery-silver to-gray-400 text-black;
+}
+
+.tier-3 {
+  @apply bg-gradient-to-r from-lottery-bronze to-orange-600 text-white;
+}
+
+/* Encrypted number display */
+.encrypted-display {
+  @apply font-mono text-sm tracking-wider text-primary/70;
+  text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 rounded-full hover:bg-primary/50;
+}
