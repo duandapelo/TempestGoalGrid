@@ -8,7 +8,9 @@
 
 ## 🌟 Live Demo
 
-🔗 **[https://tempestgoalgrid-ql6eh14we-songsus-projects.vercel.app](https://tempestgoalgrid-ql6eh14we-songsus-projects.vercel.app)**
+🔗 **[https://tempestgoalgrid.vercel.app](https://tempestgoalgrid.vercel.app)**
+
+Experience the world's first FHE-powered lottery platform live on Sepolia testnet.
 
 ## 📋 Table of Contents
 
